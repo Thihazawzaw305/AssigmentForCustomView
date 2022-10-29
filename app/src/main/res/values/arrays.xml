@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lunch_selection">
+        <item>Client Zaw</item>
+        <item>Client John</item>
+        <item>Client C</item>
+        <item>Client D</item>
+        <item>Client E</item>
+    </string-array>
+
+</resources>

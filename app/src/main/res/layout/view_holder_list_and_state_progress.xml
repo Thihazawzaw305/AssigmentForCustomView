@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:background="#EAECF1"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="4">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="24.19"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_regular_2x"
+            android:textColor="@android:color/darker_gray"
+            android:layout_gravity="center"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:background="@color/light_green" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="5dp"
+                app:srcCompat="@drawable/ic_circle_background"/>
+            <View
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:background="@color/light_green" />
+        </LinearLayout>
+
+
+        <include
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            layout="@layout/list_view_holder"
+            android:layout_weight="3.1"
+            />
+
+</LinearLayout>
+
+<!--    <View-->
+<!--        android:id="@+id/viewOne"-->
+<!--        android:layout_width="5dp"-->
+<!--        android:layout_height="65dp"-->
+<!--        android:layout_marginStart="@dimen/margin_medium_2"-->
+<!--        android:background="@color/teal_700" />-->
+
+<!--   <androidx.appcompat.widget.AppCompatImageView-->
+<!--       android:id="@+id/ivCircle"-->
+<!--       android:layout_below="@id/viewOne"-->
+<!--       android:layout_width="28dp"-->
+<!--       android:layout_height="28dp"-->
+<!--       android:layout_centerVertical="true"-->
+<!--     android:layout_marginStart="5dp"-->
+<!--      app:srcCompat="@drawable/ic_circle_background"/>-->
+<!--    <View-->
+<!--        android:id="@+id/viewTwo"-->
+<!--        android:layout_below="@id/ivCircle"-->
+<!--        android:layout_width="5dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_marginStart="@dimen/margin_medium_2"-->
+<!--        android:background="@color/teal_700" />-->
+
+
+
+
+
+
+
+
+</RelativeLayout>

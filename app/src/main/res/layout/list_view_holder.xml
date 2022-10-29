@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_marginBottom="@dimen/margin_medium"
+    android:background="@drawable/ic_list_item_background">
+
+    <LinearLayout
+        android:id="@+id/llInProgressAndDesign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2.0">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvInProgess"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="In progess"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_weight="1"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_regular_3x"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDesign"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:layout_weight="1"
+            android:text="#Design"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/text_regular_3x"
+            android:textStyle="bold" />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llContactPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_below="@id/llInProgressAndDesign"
+        >
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvContactPage"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact page"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_regular_3x"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/llCommentBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/llContactPage"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:weightSum="2">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:weightSum="4"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivComment"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:tint="@android:color/darker_gray"
+                app:srcCompat="@drawable/comment" />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="8"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_regular_3x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivShare"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:tint="@android:color/darker_gray"
+                app:srcCompat="@drawable/comment" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="8"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_regular_3x"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:weightSum="2"
+   >
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="N-158"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_regular_3x"
+        android:textStyle="bold" />
+
+
+
+
+
+
+</LinearLayout>
+
+
+    </LinearLayout>
+
+    <com.padcmyanmar.thiha.assigmentforcustomview.components.RoundedProfileWithBorder
+        android:layout_width="50dp"
+        android:id="@+id/ivProfileFromList"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/degod_nft"
+        android:layout_alignParentBottom="true"
+        app:radius="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_marginStart="@dimen/margin_medium_2"/>
+
+</RelativeLayout>
+
+    <!--    #33354e-->
+    <!--    #2cc09c-->
+    <!--    #5c57cb-->

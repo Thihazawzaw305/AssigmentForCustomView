@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Ink">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnBackFromNewTask"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:src="@drawable/left_arrow_button"
+            android:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCreateNewTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_toEndOf="@id/btnBackFromNewTask"
+            android:text="A Create New Task"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_regular_2x"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:text="Save"
+            android:textColor="@color/light_green"
+            android:textSize="@dimen/text_regular_2x"
+            android:textStyle="bold" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvClient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCreateNewTask"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:text="Client"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/text_regular_2x"
+            android:textStyle="bold" />
+
+            <com.padcmyanmar.thiha.assigmentforcustomview.components.RoundedProfileWithBorder
+                android:id="@+id/ivClientProfile"
+                android:elevation="10dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/tvClient"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                app:radius="30dp"
+                app:srcCompat="@drawable/degod_nft" />
+
+        <Spinner
+            android:id="@+id/spinnerLunchSelection"
+            style="@style/mySpinnerItemStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvClient"
+            android:layout_alignBottom="@id/ivClientProfile"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_toEndOf="@id/ivClientProfile"
+            android:backgroundTint="@android:color/darker_gray"
+            android:entries="@array/lunch_selection"
+            android:popupBackground="@color/Ink"
+            android:theme="@style/mySpinnerItemStyle" />
+
+            <View
+                android:id="@+id/lineView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/spinnerLunchSelection"
+                android:layout_marginStart="@dimen/margin_medium_3"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_toEndOf="@id/ivClientProfile"
+                android:background="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProjectName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lineView"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:text="PROJECT NAME"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/text_regular_2x"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etProjectName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProjectName"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:backgroundTint="@color/white"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/text_regular_2x"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProjectDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etProjectName"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:text="PROJECT DATE"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/text_regular_2x"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivStartDate"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/tvProjectDate"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:src="@drawable/ic_baseline_calendar_month_black_24"
+            android:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProjectDate"
+            android:layout_alignBottom="@id/ivStartDate"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_toEndOf="@id/ivStartDate"
+            android:gravity="bottom"
+            android:text="Start Date"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_regular_2x"
+            android:textStyle="bold" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivEndDate"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/tvProjectDate"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_toEndOf="@id/middleDottedLineView"
+            android:src="@drawable/ic_baseline_calendar_month_black_24"
+            android:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProjectDate"
+            android:layout_alignBottom="@id/ivStartDate"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:layout_toEndOf="@id/ivEndDate"
+            android:gravity="bottom"
+            android:text="End Date"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_regular_2x"
+            android:textStyle="bold" />
+
+
+        <View
+            android:id="@+id/middleDottedLineView"
+            android:layout_width="10dp"
+            android:layout_height="3dp"
+            android:layout_below="@id/tvProjectDate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:background="@color/white" />
+
+
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/ivStartDate"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:background="@color/white" />
+
+
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/ivStartDate"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginBottom="@dimen/margin_medium_2"
+            android:layout_toEndOf="@id/middleDottedLineView"
+            android:background="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAssignee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivStartDate"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:text="ASSIGNEE"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/text_regular_2x"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProfileFromNewTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAssignee"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:clipToPadding="true" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnAddFromNewTask"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/tvAssignee"
+                android:layout_marginStart="-10dp"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_toEndOf="@id/rvProfileFromNewTask"
+                android:background="@drawable/ic_circle_background"
+                android:backgroundTint="@color/white"
+                android:elevation="@dimen/margin_medium"
+                android:padding="@dimen/margin_medium"
+                android:src="@drawable/ic_baseline_add_black_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rvProfileFromNewTask"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:text="CATEGORY"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/text_regular_2x"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/llChipView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/tvCategory"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:weightSum="3">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/CustomChipStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Design"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_regular"
+                    app:chipCornerRadius="8dp" />
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_weight="1">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/CustomChipStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Frontend"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_regular"
+                    app:chipCornerRadius="8dp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_weight="1">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/CustomChipStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Backend"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_regular"
+                    app:chipCornerRadius="8dp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llChipView"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@drawable/ic_new_task_background">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="Description"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_regular_2x"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/paperclip"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:background="@drawable/ic_profile_border"
+                android:backgroundTint="@android:color/darker_gray"
+                android:padding="@dimen/margin_medium"
+                android:tint="@color/light_green"/>
+            <View
+                android:id="@+id/lineView2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tvDescription"
+                android:layout_marginStart="@dimen/margin_medium_3"
+                android:layout_marginEnd="@dimen/margin_xxlarge"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:background="@android:color/darker_gray" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAttachment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lineView2"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="ATTACHMENT"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_regular_2x"
+                android:textColor="@android:color/darker_gray" />
+
+
+            <com.padcmyanmar.thiha.assigmentforcustomview.components.RoundedProfileWithBorder
+                android:id="@+id/ivProgressBarImage"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:elevation="10dp"
+                android:layout_below="@id/tvAttachment"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                app:radius="35dp"
+                app:srcCompat="@drawable/degod_nft" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvReference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAttachment"
+                android:layout_toEndOf="@id/ivProgressBarImage"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:text="Reference"
+                android:textStyle="bold"
+               android:layout_marginTop="@dimen/margin_large"
+                android:gravity="center"
+                android:textSize="@dimen/text_regular_2x"
+                android:textColor="@color/black" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@id/tvReference"
+                android:layout_marginEnd="100dp"
+                android:progress="70"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_toEndOf="@id/ivProgressBarImage" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnCancel"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:elevation="@dimen/margin_medium"
+                android:padding="@dimen/margin_medium"
+                app:srcCompat="@drawable/ic_baseline_close_black_24"
+                android:background="@drawable/ic_circle_background"
+                android:backgroundTint="@color/white"
+                android:layout_gravity="end"
+                android:layout_below="@id/tvAttachment"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_large"/>
+
+            <FrameLayout
+                android:id="@+id/btnCreateTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progressBar"
+                android:layout_marginStart="@dimen/margin_xlarge"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                android:layout_marginEnd="@dimen/margin_xlarge"
+                android:background="@drawable/ic_message_buttom"
+                android:layout_marginBottom="@dimen/margin_medium_2">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Create Task"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:padding="@dimen/margin_medium_2"
+                    android:letterSpacing="0.1"
+                    android:textColor="@color/white"/>
+
+
+
+
+            </FrameLayout>
+
+        </RelativeLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
