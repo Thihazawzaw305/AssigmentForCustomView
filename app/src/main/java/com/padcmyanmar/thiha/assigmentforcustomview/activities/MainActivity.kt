@@ -2,32 +2,32 @@ package com.padcmyanmar.thiha.assigmentforcustomview.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.tabs.TabLayout
 import com.padcmyanmar.thiha.assigmentforcustomview.R
 import com.padcmyanmar.thiha.assigmentforcustomview.adapters.ListAdapter
 import com.padcmyanmar.thiha.assigmentforcustomview.adapters.ProfileAdapter
-import com.padcmyanmar.thiha.assigmentforcustomview.adapters.listAndProgressStateAdapter
+import com.padcmyanmar.thiha.assigmentforcustomview.adapters.listWithDateAdapter
 import com.padcmyanmar.thiha.assigmentforcustomview.components.OverlapRecyclerView
-import com.padcmyanmar.thiha.assigmentforcustomview.delegates.ProfileDelegate
-import com.padcmyanmar.thiha.assigmentforcustomview.delegates.listdelegate
 import com.padcmyanmar.thiha.assigmentforcustomview.dummy.dummyGenreList
+import com.padcmyanmar.thiha.assigmentforcustomview.mvp.view.MainView
+import com.padcmyanmar.thiha.assigmentforcustomview.mvp.presenters.MainPresenter
+import com.padcmyanmar.thiha.assigmentforcustomview.mvp.presenters.MainPresenterImpl
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_profile_details.*
 
-class MainActivity : AppCompatActivity(), ProfileDelegate , listdelegate{
+class MainActivity : AppCompatActivity(), MainView {
 
     private lateinit var mListAdapter : ListAdapter
     private lateinit var mProfileAdapter : ProfileAdapter
-    private lateinit var mListAndProgressStateAdapter : listAndProgressStateAdapter
-
+    private lateinit var mListWithDateAdapter : listWithDateAdapter
+    lateinit var mPresenter: MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setUpPresenter()
         setUpRecyclerView()
         setUpTabLayout()
         setUpListener()
@@ -35,17 +35,28 @@ class MainActivity : AppCompatActivity(), ProfileDelegate , listdelegate{
     }
 
 
-private fun setUpRecyclerView(){
-  mListAndProgressStateAdapter = listAndProgressStateAdapter(this)
-    rvListItems.adapter = mListAndProgressStateAdapter
+
+    private fun setUpPresenter() {
+        mPresenter = ViewModelProvider(this)[MainPresenterImpl::class.java]
+        mPresenter.iniView(this)
+    }
+
+    private fun setUpListener(){
+        btnAdd.setOnClickListener {
+            mPresenter.onTapAdd()
+        }
+    }
+    private fun setUpRecyclerView(){
+  mListWithDateAdapter = listWithDateAdapter(mPresenter)
+    rvListItems.adapter = mListWithDateAdapter
     rvListItems.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
 
-    mProfileAdapter = ProfileAdapter(this)
+    mProfileAdapter = ProfileAdapter(mPresenter)
     rvProfile.adapter = mProfileAdapter
     rvProfile.layoutManager =LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
     rvProfile.addItemDecoration(OverlapRecyclerView())
 
-    mListAdapter = ListAdapter()
+    mListAdapter = ListAdapter(true,mPresenter)
     rvListItemsFromProfile.adapter = mListAdapter
     rvListItemsFromProfile.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
@@ -64,40 +75,26 @@ private fun setUpTabLayout() {
     }
 
 }
-private fun setUpListener(){
-    tabLayOut.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener{
-        override fun onTabSelected(tab: TabLayout.Tab?) {
-          Snackbar.make(window.decorView, tab?.text?:"",Snackbar.LENGTH_LONG).show()
-        }
 
-        override fun onTabUnselected(tab: TabLayout.Tab?) {
-
-        }
-
-        override fun onTabReselected(tab: TabLayout.Tab?) {
-
-        }
-    })
-
-    btnAdd.setOnClickListener {
-        startActivity(NewTaskActivity.newIntent(this))
+    override fun navigateToCreateNewTask() {
+     startActivity(NewTaskActivity.newIntent(this))
     }
-}
 
-    override fun onTapProfile() {
-        val sheet  = BottomSheetBehavior.from(bottomSheet)
+
+    override fun navigateToProfile() {
+        val sheet = BottomSheetBehavior.from(bottomSheet)
 
 //        tvInProgress.setOnClickListener {
-            when {
+        when {
 
-                sheet.state != BottomSheetBehavior.STATE_EXPANDED ->{
-                    sheet.state = BottomSheetBehavior.STATE_EXPANDED
-                }
-                else ->{
-                    sheet.state = BottomSheetBehavior.STATE_COLLAPSED
-                }
-
+            sheet.state != BottomSheetBehavior.STATE_EXPANDED -> {
+                sheet.state = BottomSheetBehavior.STATE_EXPANDED
             }
+            else -> {
+                sheet.state = BottomSheetBehavior.STATE_COLLAPSED
+            }
+
+        }
 //        }
 
         btnClose.setOnClickListener {

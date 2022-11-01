@@ -69,23 +69,23 @@
                 android:layout_below="@id/tvClient"
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium_2"
-                app:radius="30dp"
                 app:srcCompat="@drawable/degod_nft" />
 
-        <Spinner
-            android:id="@+id/spinnerLunchSelection"
-            style="@style/mySpinnerItemStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvClient"
-            android:layout_alignBottom="@id/ivClientProfile"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="@dimen/margin_medium_2"
-            android:layout_toEndOf="@id/ivClientProfile"
-            android:backgroundTint="@android:color/darker_gray"
-            android:entries="@array/lunch_selection"
-            android:popupBackground="@color/Ink"
-            android:theme="@style/mySpinnerItemStyle" />
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerLunchSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvClient"
+                android:layout_alignBottom="@id/ivClientProfile"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_toEndOf="@id/ivClientProfile"
+                android:backgroundTint="@color/white"
+                android:entries="@array/lunch_selection"
+                android:popupBackground="@color/Ink"
+                android:foregroundTint="@color/white"
+                android:theme="@style/mySpinnerItemStyle"
+               />
 
             <View
                 android:id="@+id/lineView"
@@ -228,21 +228,21 @@
             android:textSize="@dimen/text_regular_2x"
             android:textStyle="bold" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvProfileFromNewTask"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvAssignee"
-            android:layout_marginStart="@dimen/margin_medium_2"
-            android:layout_marginTop="@dimen/margin_medium_2"
-            android:clipToPadding="true" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProfileFromNewTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAssignee"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:clipToPadding="true" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/btnAddFromNewTask"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_below="@id/tvAssignee"
-                android:layout_marginStart="-10dp"
+                android:layout_marginStart="-15dp"
                 android:layout_marginTop="@dimen/margin_medium_2"
                 android:layout_toEndOf="@id/rvProfileFromNewTask"
                 android:background="@drawable/ic_circle_background"
@@ -351,14 +351,14 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                app:srcCompat="@drawable/paperclip"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="@dimen/margin_medium_2"
                 android:layout_marginEnd="@dimen/margin_medium_2"
                 android:background="@drawable/ic_profile_border"
                 android:backgroundTint="@android:color/darker_gray"
                 android:padding="@dimen/margin_medium"
-                android:tint="@color/light_green"/>
+                android:tint="@color/light_green"
+                app:srcCompat="@drawable/ic_baseline_attach_file_black_24" />
             <View
                 android:id="@+id/lineView2"
                 android:layout_width="match_parent"
@@ -390,7 +390,6 @@
                 android:layout_below="@id/tvAttachment"
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium_2"
-                app:radius="35dp"
                 app:srcCompat="@drawable/degod_nft" />
 
 
@@ -408,17 +407,18 @@
                 android:textSize="@dimen/text_regular_2x"
                 android:textColor="@color/black" />
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
+
+           <com.padcmyanmar.thiha.assigmentforcustomview.components.ProgressBar
+               android:id="@+id/progressBar"
+               android:layout_width="200dp"
+                android:layout_height="3dp"
                 android:layout_below="@id/tvReference"
-                android:layout_marginEnd="100dp"
-                android:progress="70"
-                android:layout_marginStart="@dimen/margin_medium_2"
-                android:layout_marginTop="@dimen/margin_medium_2"
-                android:layout_toEndOf="@id/ivProgressBarImage" />
+               android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:progressBarBackgroundColor="@android:color/darker_gray"
+                app:progressBarColor="@color/light_green"
+                app:progressBarHeight="10dp"
+                app:progressBarProgress="50" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/btnCancel"
@@ -465,4 +465,8 @@
         </RelativeLayout>
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/bottomSheetFromNewTask"
+        layout="@layout/activity_profile_details"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

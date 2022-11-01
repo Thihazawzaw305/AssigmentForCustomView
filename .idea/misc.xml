@@ -6,6 +6,7 @@
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.155" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/drawable/circle_progress_bar.xml" value="0.155" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/drawable/ic_baseline_add_black_24.xml" value="0.155" />
+        <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/drawable/ic_baseline_attach_file_black_24.xml" value="0.155" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/drawable/ic_baseline_close_black_24.xml" value="0.155" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/drawable/ic_button_background.xml" value="0.155" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/drawable/ic_chip_background.xml" value="0.155" />
@@ -17,13 +18,15 @@
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/drawable/ic_new_task_background.xml" value="0.155" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/drawable/ic_profile_border.xml" value="0.155" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/drawable/ic_profile_detail_background.xml" value="0.155" />
-        <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/layout/acitivity_new_task.xml" value="0.176" />
+        <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/layout/acitivity_new_task.xml" value="0.264" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/layout/activity_profile_details.xml" value="0.259375" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/layout/list_view_holder.xml" value="0.264" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/layout/profile_view_holder.xml" value="0.8" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/layout/profile_view_pod.xml" value="0.259375" />
+        <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/layout/view_holder.xml" value="0.259375" />
         <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/layout/view_holder_list_and_state_progress.xml" value="0.259375" />
+        <entry key="..\:/Users/user/Downloads/AssigmentForCustomView/app/src/main/res/layout/view_holder_list_with_date.xml" value="0.259375" />
       </map>
     </option>
   </component>

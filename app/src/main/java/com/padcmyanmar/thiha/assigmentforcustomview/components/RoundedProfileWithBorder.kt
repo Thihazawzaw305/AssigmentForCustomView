@@ -22,7 +22,6 @@ class RoundedProfileWithBorder(context: Context, attrs: AttributeSet) : AppCompa
 
     //View size in Pixel
     private var size = 0
-   private var  radius = size / 2f
 
 
     init {
@@ -35,7 +34,7 @@ class RoundedProfileWithBorder(context: Context, attrs: AttributeSet) : AppCompa
         context.withStyledAttributes(attrs, R.styleable.RoundedProfileWithBorder) {
             borderColor = getColor(R.styleable.RoundedProfileWithBorder_borderColor, DEFAULT_BORDER_COLOR)
             borderWidth = getDimension(R.styleable.RoundedProfileWithBorder_borderWidth, DEFAULT_BORDER_WIDTH)
-            radius = getDimension(R.styleable.RoundedProfileWithBorder_radius, 10f)
+
 
         }
         }
@@ -44,21 +43,22 @@ class RoundedProfileWithBorder(context: Context, attrs: AttributeSet) : AppCompa
 
 
     override fun onDraw(canvas: Canvas) {
-        path.addCircle(radius, radius, radius, Path.Direction.CCW)
+        path.addCircle(size / 2f, size / 2f, size / 2f, Path.Direction.CCW)
         canvas.clipPath(path)
         super.onDraw(canvas)
-        drawFaceBackground(canvas)
+        drawCircleImageWithBorder(canvas)
 
 
     }
 
-    private fun drawFaceBackground(canvas: Canvas) {
+    private fun drawCircleImageWithBorder(canvas: Canvas) {
+
 
 
         paint.color = borderColor
         paint.style = Paint.Style.STROKE
         paint.strokeWidth = borderWidth
-        canvas.drawCircle(radius, radius, radius - (borderWidth/2f), paint)
+        canvas.drawCircle(size / 2f, size / 2f, size / 2f - (borderWidth/2f), paint)
 
     }
 

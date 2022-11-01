@@ -96,6 +96,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvProfile"
+            android:elevation="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvDates"
@@ -105,41 +106,31 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btnAdd"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_below="@id/tvDates"
-            android:layout_marginStart="-10dp"
+            android:layout_marginStart="-15dp"
             android:layout_marginTop="@dimen/margin_medium_2"
             android:layout_toEndOf="@id/rvProfile"
             android:background="@drawable/ic_circle_background"
             android:backgroundTint="@color/white"
-            android:elevation="@dimen/margin_medium"
+            android:elevation="2dp"
             android:padding="@dimen/margin_medium"
             android:src="@drawable/ic_baseline_add_black_24" />
 
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            style="@style/CircularDeterminateProgressBar"
-            android:layout_below="@id/tvDates"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="@dimen/margin_medium_2"
-            android:progress="70"
-            android:layout_marginTop="@dimen/margin_medium_2"
-            />
-       <androidx.appcompat.widget.AppCompatTextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+       <com.padcmyanmar.thiha.assigmentforcustomview.components.ProgressCircleView
+           android:layout_width="60dp"
+           android:layout_height="60dp"
            android:layout_alignParentEnd="true"
-        android:layout_alignTop="@id/progressBar"
-           android:layout_marginTop="@dimen/margin_medium_3"
-           android:text="87%"
-           android:gravity="center"
-           android:layout_marginEnd="30dp"
-           android:textColor="@color/black"
-           />
+           android:layout_marginEnd="@dimen/margin_medium_2"
+           android:layout_alignParentBottom="true"
+           app:progress = "85"
+           android:layout_marginBottom="40dp"
+           app:progressBackgroundColor="#fac0b1"
+           app:progressBarRadius="5dp"
+           app:progressColor="@color/orange"
+           app:textColor="@color/orange"/>
     </RelativeLayout>
 
         <RelativeLayout
@@ -189,9 +180,7 @@
                 android:layout_height="match_parent"
                 android:layout_below="@id/tvData"
                 android:clipToPadding="false"
-                android:layout_marginStart="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium_2"
-                android:layout_marginEnd="@dimen/margin_medium_2"
                 />
 
         </RelativeLayout>
